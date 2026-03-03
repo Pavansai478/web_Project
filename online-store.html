@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FreshMart Grocery Store</title>
+
+<style>
+body { 
+font-family: Arial; 
+margin: 0; 
+background: #f4f4f4; 
+}
+section { 
+display: none; 
+padding: 20px; 
+}
+header { 
+background: green; 
+color: white; 
+padding: 15px; 
+text-align: center; 
+}
+.box { 
+background: white; 
+padding: 20px; 
+margin: 100px auto; 
+width: 300px; 
+border-radius: 8px; 
+text-align: center; 
+}
+.product { 
+background: white; 
+margin: 20px; 
+padding: 15px; 
+border-radius: 8px; 
+}
+button { 
+background: green; 
+color: white; 
+border: none; 
+padding: 8px;  
+}
+button:hover { 
+background: darkgreen; 
+}
+</style>
+</head>
+<body>
+<section id="loginSection" style="display:block;">
+    <div class="box">
+        <h2>FreshMart Login</h2>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="login()">Login</button>
+    </div>
+</section>
+
+<section id="homeSection">
+    <header>
+        <h1>FreshMart Grocery Store</h1>
+    </header>
+
+    <h2>Categories</h2>
+    <ul>
+        <li>Vegetables</li>
+        <li>Fruits</li>
+        <li>Dairy</li>
+        <li>Rice & Grains</li>
+    </ul>
+
+    <h2 text-align: center>Products</h2>
+
+    <div class="product">
+        <h3 text-align: center;>Tomatoes</h3>
+        <img src="tomato.jpg" alt="Tomatoes" width="150">
+        <p>Price: ₹40</p>
+        <button onclick="addToCart(40)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h3 text-align: center;>Milk</h3>
+        <img src="milk.jpg" alt="Milk" width="150">
+        <p>Price: ₹55</p>
+        <button onclick="addToCart(55)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h3 text-align: center;>Rice</h3>
+        <img src="rice.jpg" alt="Rice" width="150">
+        <p>Price: ₹60</p>
+        <button onclick="addToCart(60)">Add to Cart</button>
+    </div>
+
+    <br>
+    <button onclick="showCart()">Go To Cart</button>
+    <button onclick="logout()">Logout</button>
+</section>
+
+<!-- CART SECTION -->
+<section id="cartSection">
+    <div class="box">
+        <h2>Your Cart</h2>
+        <p id="totalAmount"></p>
+        <button onclick="backToHome()">Back to Home</button>
+    </div>
+</section>
+
+<script>
+var total = 0;
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if(user === "" || pass === "") {
+        alert("Enter username and password");
+    } else {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("homeSection").style.display = "block";
+    }
+}
+
+function addToCart(price) {
+    total += price;
+    alert("Item Added to Cart");
+}
+
+function showCart() {
+    document.getElementById("homeSection").style.display = "none";
+    document.getElementById("cartSection").style.display = "block";
+    document.getElementById("totalAmount").innerHTML = "Total Amount: ₹" + total;
+}
+
+function backToHome() {
+    document.getElementById("cartSection").style.display = "none";
+    document.getElementById("homeSection").style.display = "block";
+}
+
+function logout() {
+    total = 0;
+    document.getElementById("homeSection").style.display = "none";
+    document.getElementById("loginSection").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
