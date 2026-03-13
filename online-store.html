@@ -4,143 +4,340 @@
 <title>FreshMart Grocery Store</title>
 
 <style>
-body { 
-font-family: Arial; 
-margin: 0; 
-background: #f4f4f4; 
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
 }
-section { 
-display: none; 
-padding: 20px; 
+
+header{
+background:green;
+color:white;
+padding:15px;
+text-align:center;
 }
-header { 
-background: green; 
-color: white; 
-padding: 15px; 
-text-align: center; 
+
+section{
+display:none;
+padding:20px;
 }
-.box { 
-background: white; 
-padding: 20px; 
-margin: 100px auto; 
-width: 300px; 
-border-radius: 8px; 
-text-align: center; 
+
+.box{
+background:white;
+padding:20px;
+margin:100px auto;
+width:320px;
+border-radius:8px;
+text-align:center;
 }
-.product { 
-background: white; 
-margin: 20px; 
-padding: 15px; 
-border-radius: 8px; 
+
+.product{
+background:white;
+margin:15px;
+padding:15px;
+border-radius:8px;
+width:200px;
+display:inline-block;
+text-align:center;
 }
-button { 
-background: green; 
-color: white; 
-border: none; 
-padding: 8px;  
+
+button{
+background:green;
+color:white;
+border:none;
+padding:8px;
+cursor:pointer;
 }
-button:hover { 
-background: darkgreen; 
+
+button:hover{
+background:darkgreen;
 }
+
+img{
+border-radius:6px;
+}
+
 </style>
+
 </head>
+
 <body>
+
+<!-- LOGIN SECTION -->
+
 <section id="loginSection" style="display:block;">
-    <div class="box">
-        <h2>FreshMart Login</h2>
-        <input type="text" id="username" placeholder="Username"><br><br>
-        <input type="password" id="password" placeholder="Password"><br><br>
-        <button onclick="login()">Login</button>
-    </div>
-</section>
 
+<div class="box">
+
+<h2>FreshMart Login</h2>
+
+<input type="text" id="username" placeholder="Username"><br><br>
+
+<input type="password" id="password" placeholder="Password"><br><br>
+
+<button onclick="login()">Login</button>
+
+</div>
+
+</section>
 <section id="homeSection">
-    <header>
-        <h1>FreshMart Grocery Store</h1>
-    </header>
+<header>
+<h1>FreshMart Grocery Store</h1>
+</header>
+<h2>Categories</h2>
+<ul>
+<li>Vegetables</li>
+<li>Fruits</li>
+<li>Dairy</li>
+<li>Rice & Grains</li>
+</ul>
 
-    <h2>Categories</h2>
-    <ul>
-        <li>Vegetables</li>
-        <li>Fruits</li>
-        <li>Dairy</li>
-        <li>Rice & Grains</li>
-    </ul>
+<h2 style="text-align:center;">Products</h2>
 
-    <h2 text-align: center>Products</h2>
 
-    <div class="product">
-        <h3 text-align: center;>Tomatoes</h3>
-        <img src="tomato.jpg" alt="Tomatoes" width="150">
-        <p>Price: ₹40</p>
-        <button onclick="addToCart(40)">Add to Cart</button>
-    </div>
+<div class="product">
+<h3>Tomatoes</h3>
+<img src="tomato.jpg" width="120">
+<p>Price ₹40</p>
+<button onclick="addToCart('Tomatoes',40)">Add to Cart</button>
+</div>
 
-    <div class="product">
-        <h3 text-align: center;>Milk</h3>
-        <img src="milk.jpg" alt="Milk" width="150">
-        <p>Price: ₹55</p>
-        <button onclick="addToCart(55)">Add to Cart</button>
-    </div>
 
-    <div class="product">
-        <h3 text-align: center;>Rice</h3>
-        <img src="rice.jpg" alt="Rice" width="150">
-        <p>Price: ₹60</p>
-        <button onclick="addToCart(60)">Add to Cart</button>
-    </div>
+<div class="product">
+<h3>Milk</h3>
+<img src="milk.jpg" width="120">
+<p>Price ₹55</p>
+<button onclick="addToCart('Milk',55)">Add to Cart</button>
+</div>
 
-    <br>
-    <button onclick="showCart()">Go To Cart</button>
-    <button onclick="logout()">Logout</button>
+
+<div class="product">
+<h3>Rice</h3>
+<img src="rice.jpg" width="120">
+<p>Price ₹60</p>
+<button onclick="addToCart('Rice',60)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Apple</h3>
+<img src="apple.jpg" width="120">
+<p>Price ₹120</p>
+<button onclick="addToCart('Apple',120)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Banana</h3>
+<img src="banana.jpg" width="120">
+<p>Price ₹50</p>
+<button onclick="addToCart('Banana',50)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Potato</h3>
+<img src="potato.jpg" width="120">
+<p>Price ₹30</p>
+<button onclick="addToCart('Potato',30)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Onion</h3>
+<img src="onion.jpg" width="120">
+<p>Price ₹35</p>
+<button onclick="addToCart('Onion',35)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Bread</h3>
+<img src="bread.jpg" width="120">
+<p>Price ₹40</p>
+<button onclick="addToCart('Bread',40)">Add to Cart</button>
+</div>
+
+
+<br><br>
+
+<button onclick="showCart()">Go To Cart</button>
+
+<button onclick="logout()">Logout</button>
+
 </section>
+
+
 
 <!-- CART SECTION -->
+
 <section id="cartSection">
-    <div class="box">
-        <h2>Your Cart</h2>
-        <p id="totalAmount"></p>
-        <button onclick="backToHome()">Back to Home</button>
-    </div>
+
+<div class="box">
+
+<h2>Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<p id="totalAmount"></p>
+
+<button onclick="checkout()">Checkout</button>
+
+<br><br>
+
+<button onclick="backToHome()">Back to Home</button>
+
+</div>
+
 </section>
 
+
+
 <script>
-var total = 0;
-function login() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
 
-    if(user === "" || pass === "") {
-        alert("Enter username and password");
-    } else {
-        document.getElementById("loginSection").style.display = "none";
-        document.getElementById("homeSection").style.display = "block";
-    }
+var cart = {};
+
+function login(){
+
+var user=document.getElementById("username").value;
+var pass=document.getElementById("password").value;
+
+if(user=="" || pass==""){
+alert("Enter username and password");
+}
+else{
+
+document.getElementById("loginSection").style.display="none";
+document.getElementById("homeSection").style.display="block";
+
 }
 
-function addToCart(price) {
-    total += price;
-    alert("Item Added to Cart");
 }
 
-function showCart() {
-    document.getElementById("homeSection").style.display = "none";
-    document.getElementById("cartSection").style.display = "block";
-    document.getElementById("totalAmount").innerHTML = "Total Amount: ₹" + total;
+
+function addToCart(name,price){
+
+if(cart[name]){
+
+cart[name].qty++;
+
+}
+else{
+
+cart[name]={price:price,qty:1};
+
 }
 
-function backToHome() {
-    document.getElementById("cartSection").style.display = "none";
-    document.getElementById("homeSection").style.display = "block";
+alert(name+" added to cart");
+
 }
 
-function logout() {
-    total = 0;
-    document.getElementById("homeSection").style.display = "none";
-    document.getElementById("loginSection").style.display = "block";
+
+function showCart(){
+
+document.getElementById("homeSection").style.display="none";
+document.getElementById("cartSection").style.display="block";
+
+var cartHTML="";
+var total=0;
+
+for(var item in cart){
+
+var price=cart[item].price;
+var qty=cart[item].qty;
+var subtotal=price*qty;
+
+total+=subtotal;
+
+cartHTML+=
+"<p>"+item+" ₹"+price+" × "+qty+
+" <button onclick=\"increaseQty('"+item+"')\">+</button>"+
+" <button onclick=\"decreaseQty('"+item+"')\">-</button>"+
+" <button onclick=\"removeItem('"+item+"')\">Remove</button>"+
+"</p>";
+
+}
+
+document.getElementById("cartItems").innerHTML=cartHTML;
+
+document.getElementById("totalAmount").innerHTML="Total Amount: ₹"+total;
+
+}
+
+
+function increaseQty(item){
+
+cart[item].qty++;
+
+showCart();
+
+}
+
+
+function decreaseQty(item){
+
+cart[item].qty--;
+
+if(cart[item].qty<=0){
+
+delete cart[item];
+
+}
+
+showCart();
+
+}
+
+
+function removeItem(item){
+
+delete cart[item];
+
+showCart();
+
+}
+
+
+function checkout(){
+
+if(Object.keys(cart).length===0){
+
+alert("Cart is empty");
+
+return;
+
+}
+
+alert("Order placed successfully!");
+
+cart={};
+
+document.getElementById("cartSection").style.display="none";
+document.getElementById("homeSection").style.display="block";
+
+}
+
+
+function backToHome(){
+
+document.getElementById("cartSection").style.display="none";
+document.getElementById("homeSection").style.display="block";
+
+}
+
+
+function logout(){
+
+cart={};
+
+document.getElementById("homeSection").style.display="none";
+document.getElementById("loginSection").style.display="block";
+
 }
 
 </script>
 
 </body>
+
 </html>
